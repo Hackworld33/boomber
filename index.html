@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boomber - Secure Message Testing Interface</title>
+    <meta name="description" content="Boomber is a secure message testing interface. For educational purposes only.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-container">
+        <div class="loader-content">
+            <div class="glitch-wrapper">
+                <h1 class="glitch" data-text="BOOMBER">BOOMBER</h1>
+            </div>
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+            <p class="loader-text">INITIALIZING SYSTEMS...</p>
+        </div>
+    </div>
+
+    <!-- Background Effects -->
+    <div class="cyber-grid"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Content -->
+    <main class="app-container">
+        
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-bomb"></i> BOOMBER
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link">Terminal</a></li>
+                <li><a href="#features" class="nav-link">Specs</a></li>
+                <li><a href="#stats" class="nav-link">Data</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero & Input Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="neon-text blue">OVERLOAD</span> THE <br>
+                    <span class="neon-text purple">NETWORK</span>
+                </h1>
+                <p class="hero-subtitle">Simulate high-volume message delivery. Fast, untraceable, and secure. <br> <span class="highlight">Frontend Demo Only.</span></p>
+
+                <!-- Disclaimer Banner -->
+                <div class="disclaimer-banner">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <strong>DISCLAIMER:</strong> This project is only a frontend UI concept for educational and entertainment purposes. No real messages are sent.
+                </div>
+
+                <!-- Input Form -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <div class="terminal-title">root@boomber:~</div>
+                    </div>
+                    <div class="terminal-body">
+                        <form id="attackForm" class="attack-form">
+                            <div class="input-group">
+                                <label for="targetNumber">> Target Phone Number</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    <input type="tel" id="targetNumber" placeholder="+1 (555) 000-0000" required>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="messageCount">> Message Count</label>
+                                <div class="range-wrapper">
+                                    <input type="range" id="messageCount" min="1" max="1000" value="100">
+                                    <span id="rangeValue" class="range-value">100</span>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="cyber-btn" id="startBtn">
+                                <span class="btn-text">INITIATE SEQUENCE</span>
+                                <span class="btn-glitch"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard / Status (Hidden initially) -->
+            <div id="dashboard" class="dashboard-box hidden">
+                <div class="dashboard-header">
+                    <h2><i class="fa-solid fa-satellite-dish"></i> ACTIVE OPERATION</h2>
+                    <span class="status-badge pulse">RUNNING</span>
+                </div>
+                
+                <div class="progress-section">
+                    <div class="progress-stats">
+                        <span>SENT: <span id="sentCount" class="neon-blue">0</span></span>
+                        <span>TARGET: <span id="totalCount">100</span></span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div id="progressBar" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+
+                <div class="logs-container" id="logsContainer">
+                    <div class="log-entry">> Establishing secure connection...</div>
+                    <div class="log-entry success">> Connected to relay node 0x7A2.</div>
+                    <div class="log-entry">> Preparing payload sequence...</div>
+                </div>
+
+                <button class="cyber-btn outline" id="stopBtn">ABORT OPERATION</button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <h2 class="section-title">SYSTEM <span class="neon-text blue">CAPABILITIES</span></h2>
+            
+            <div class="features-grid">
+                <div class="glass-card feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Hyper-Fast</h3>
+                    <p>Optimized frontend performance simulating real-time interactions with zero latency in animations.</p>
+                </div>
+                
+                <div class="glass-card feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Safe Environment</h3>
+                    <p>100% frontend simulation. No backend APIs, no data collection, pure UI showcase.</p>
+                </div>
+                
+                <div class="glass-card feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-eye-slash"></i></div>
+                    <h3>Untraceable Design</h3>
+                    <p>Built with cyberpunk aesthetics, dark modes, and modern web technologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="stats-section">
+            <div class="glass-card stats-container">
+                <div class="stat-item">
+                    <h3 class="counter" data-target="99.9">0</h3><span class="unit">%</span>
+                    <p>Uptime Simulation</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="1337">0</h3>
+                    <p>Mock Payloads</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="0">0</h3>
+                    <p>Real Messages Sent</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">TERMINAL <span class="neon-text purple">FAQ</span></h2>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Does this actually send messages?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. This project is strictly a UI/UX concept and demonstration. It uses JavaScript to simulate progress bars and logs but does not make any network requests to SMS gateways.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this illegal?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Since this application performs no actual actions and sends zero data, it is completely legal and safe. It serves as an educational template for dark-themed web design.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What technologies are used?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>This is built using pure HTML5, modern CSS3 (Variables, Grid, Flexbox, Animations, Glassmorphism), and Vanilla JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-bomb"></i> BOOMBER
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Boomber UI Concept. All rights reserved.</p>
+                <p class="strict-disclaimer">EDUCATIONAL PURPOSES ONLY. DO NOT USE FOR MALICIOUS INTENT.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
